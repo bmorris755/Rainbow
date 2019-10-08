@@ -1,0 +1,19 @@
+1. General Idea 
+    - Create code editor that has stack overflow integration.
+
+2.  Target Audience
+    - Developers who need or would like help from stack overflow.
+
+3. Identify the problem that this will address
+    - We want to minimize the time between having a coding question and getting an answer.
+
+4. Primary goal of the project
+    - Provide a mechanism by which programmers can get help on their code.
+
+5. Identify and prioritize the user stories.
+    - As a user I want to be able to type code into and editor so I can build in a sandboxed environment.
+    - As a user I want to be able to search for coding questions when I'm stuck.
+    - As a user I want to be able to see stack overflow answers that are relevant to my problem.
+
+
+
