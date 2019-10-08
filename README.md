@@ -1,2 +1,2 @@
 # Rainbow
-Repo to hold colors or numbers.
+Repo to hold colors or numbers or something.
