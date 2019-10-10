@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .team {
+                border-style:solid;
+                border-width: 2px;
+                margin-bottom: 20px;
+                padding-bottom:20px;
+                padding-top:20px;
+              }
+        #team_1 {
+                 background-color:palegreen;
+                }
+        #team_2 {
+                 background-color:palevioletred;
+                }
+
+        #team_3 {
+                 background-color:palegoldenrod;
+                }
+
+        #team_4 {
+                 background-color:paleturquoise;
+                }
+        #team_5 {
+                 background-color:slategrey;
+                }
+    </style>
+
+    <script src="./test.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="team" id="team_1">
+       
+    </div>
+        
+    <div class="team" id="team_2">
+        
+    </div>
+    <div class="team" id="team_3">
+        
+    </div>
+    <div class="team" id="team_4">
+       
+    </div>
+    <div class="team" id="team_5">
+    
+    </div>
+    
+    <button id="refreshButton">refresh teams</button>
+</body>
+<script>
+    let team1 = ['Matthew', 'Elsa', 'JC'];
+    let team2 = ['Hayden', 'Chad', 'Kramer', 'Bryce'];
+    let team3 = ['Annie', 'Surenkhuu', 'Khoa', 'Michael'];
+    let team4 = ['John', 'Gloria', 'Kioni'];
+    let team5 = ['Xiaojie', 'Max', 'Kyle', 'Stephanie'];
+
+    let teams = [
+            {
+                teamMembers: team1,
+                encountered: false,
+                teamId: 'team_1'
+            },
+            {
+                teamMembers: team2,
+                encountered: false,
+                teamId: 'team_2'
+            },
+            {
+                teamMembers: team3,
+                encountered: false,
+                teamId: 'team_3'
+            },
+            {
+                teamMembers: team4,
+                encountered: false,
+                teamId: 'team_4'
+            },
+            {
+                teamMembers: team5,
+                encountered: false,
+                teamId: 'team_5'
+            }];
+ 
+    function refreshState(){
+        //should refresh state from JSON
+    }
+
+    function rotateConsultants(){
+        //should perform rotation amongst groups
+    }
+
+    function logStateJSON(){
+        //should console log the current state into a JSON format that could be loaded into testX.
+    }
+
+    function populateTeams(){
+        //if(!haveTeamsRemaining(teams)){
+            //alert("All teams have been encountered.");
+        //}
+
+
+        console.log(JSON.stringify(teams));
+        let consultants = ['Brennon', 'Kevin', 'Spencer'];
+
+        teams.forEach(function(team){
+            if(!team.encountered && consultants.length > 0){
+                team.encountered = true;
+                populateTeam(team, consultants.pop());
+            } else{
+                populateTeam(team, null);
+            }
+        })   
+
+        consultants = ['Brennon', 'Kevin', 'Spencer'];     
+    }
+
+    function haveTeamsRemaining(someTeams){
+        let teamsLeft = false;
+        someTeams.forEach(function(team){
+            if(!team.encountered){
+                teamsLeft = true;
+            }
+        });
+
+        return teamsLeft;
+    }
+
+    function populateTeam(team, consultant){
+        let currentTeam = team.teamMembers.slice(0);
+        if(consultant){
+            currentTeam.push(consultant);
+        }
+
+        $(`#${team.teamId}`).text(currentTeam.join(', '));
+    }
+
+    $('#refreshButton').on('click', function(){{
+        populateTeams();
+    }});
+
+    populateTeams();
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
