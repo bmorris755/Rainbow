@@ -40,22 +40,11 @@
 </head>
 
 <body>
-    <div class="team" id="team_1">
-       
-    </div>
-        
-    <div class="team" id="team_2">
-        
-    </div>
-    <div class="team" id="team_3">
-        
-    </div>
-    <div class="team" id="team_4">
-       
-    </div>
-    <div class="team" id="team_5">
-    
-    </div>
+    <div class="team" id="team_1"></div>
+    <div class="team" id="team_2"></div>
+    <div class="team" id="team_3"></div>
+    <div class="team" id="team_4"></div>
+    <div class="team" id="team_5"></div>
     
     <button id="refreshButton">refresh teams</button>
 </body>
@@ -93,25 +82,7 @@
                 teamId: 'team_5'
             }];
  
-    function refreshState(){
-        //should refresh state from JSON
-    }
-
-    function rotateConsultants(){
-        //should perform rotation amongst groups
-    }
-
-    function logStateJSON(){
-        //should console log the current state into a JSON format that could be loaded into testX.
-    }
-
     function populateTeams(){
-        //if(!haveTeamsRemaining(teams)){
-            //alert("All teams have been encountered.");
-        //}
-
-
-        console.log(JSON.stringify(teams));
         let consultants = ['Brennon', 'Kevin', 'Spencer'];
 
         teams.forEach(function(team){
@@ -121,9 +92,7 @@
             } else{
                 populateTeam(team, null);
             }
-        })   
-
-        consultants = ['Brennon', 'Kevin', 'Spencer'];     
+        });   
     }
 
     function haveTeamsRemaining(someTeams){
